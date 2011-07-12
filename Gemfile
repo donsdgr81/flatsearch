@@ -38,6 +38,8 @@ group :development, :test do
   gem 'growl'
   gem 'database_cleaner'
   gem 'rcov'
+  gem 'factory_girl'
+  gem 'shoulda-matchers'
 end
 
 
