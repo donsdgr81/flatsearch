@@ -38,8 +38,11 @@ group :development, :test do
   gem 'growl'
   gem 'database_cleaner'
   gem 'rcov'
-  gem 'factory_girl'
+  gem "factory_girl", "~> 2.0.0.rc1"
+  gem "factory_girl_rails", "~> 1.1.rc1"
   gem 'shoulda-matchers'
+  gem 'haml'
+  gem 'hpricot' # For ERB to HAML convertion
 end
 
 

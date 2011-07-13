@@ -3,30 +3,8 @@ require 'spec_helper'
 describe "properties/index.html.erb" do
   before(:each) do
     assign(:properties, [
-      stub_model(Property,
-        :title => "Title",
-        :description => "MyText",
-        :address => "Address",
-        :zipcode => "Zipcode",
-        :bedrooms => 1,
-        :bathrooms => 1,
-        :price => 1.5,
-        :negotiable => false,
-        :size => 1.5,
-        :furnished => false
-      ),
-      stub_model(Property,
-        :title => "Title",
-        :description => "MyText",
-        :address => "Address",
-        :zipcode => "Zipcode",
-        :bedrooms => 1,
-        :bathrooms => 1,
-        :price => 1.5,
-        :negotiable => false,
-        :size => 1.5,
-        :furnished => false
-      )
+      FactoryGirl.create(:property),
+      FactoryGirl.create(:property)
     ])
   end
 

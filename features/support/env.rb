@@ -3,10 +3,11 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file 
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
+#$LOAD_PATH << File.expand_path('../../app/model' , __FILE__)
 
 require 'rubygems'
 require 'spork'
- 
+
 Spork.prefork do
   require 'cucumber/rails'
 
