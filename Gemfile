@@ -42,7 +42,9 @@ group :development, :test do
   gem "factory_girl_rails", "~> 1.1.rc1"
   gem 'shoulda-matchers'
   gem 'haml'
+  gem 'haml-rails'
   gem 'hpricot' # For ERB to HAML convertion
+  gem 'webrat'
 end
 
 

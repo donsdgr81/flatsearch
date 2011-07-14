@@ -1,0 +1,37 @@
+%p#notice= notice
+%p
+  %b Title:
+  = @property.title
+%p
+  %b Description:
+  = @property.description
+%p
+  %b Address:
+  = @property.address
+%p
+  %b Zipcode:
+  = @property.zipcode
+%p
+  %b Bedrooms:
+  = @property.bedrooms
+%p
+  %b Bathrooms:
+  = @property.bathrooms
+%p
+  %b Price:
+  = @property.price
+%p
+  %b Negotiable:
+  = @property.negotiable
+%p
+  %b Date available:
+  = @property.date_available
+%p
+  %b Size:
+  = @property.size
+%p
+  %b Furnished:
+  = @property.furnished
+= link_to 'Edit', edit_property_path(@property)
+|
+\#{link_to 'Back', properties_path}

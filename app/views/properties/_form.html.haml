@@ -1,0 +1,55 @@
+= form_for(@property) do |f|
+  - if @property.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@property.errors.count, "error")
+        prohibited this property from being saved:
+      %ul
+        - @property.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address
+  .field
+    = f.label :zipcode
+    %br/
+    = f.text_field :zipcode
+  .field
+    = f.label :bedrooms
+    %br/
+    = f.number_field :bedrooms
+  .field
+    = f.label :bathrooms
+    %br/
+    = f.number_field :bathrooms
+  .field
+    = f.label :price
+    %br/
+    = f.text_field :price
+  .field
+    = f.label :negotiable
+    %br/
+    = f.check_box :negotiable
+  .field
+    = f.label :date_available
+    %br/
+    = f.date_select :date_available
+  .field
+    = f.label :size
+    %br/
+    = f.text_field :size
+  .field
+    = f.label :furnished
+    %br/
+    = f.check_box :furnished
+  .actions
+    = f.submit "Submit Property"

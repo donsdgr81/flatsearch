@@ -1,5 +1,5 @@
 Given /^I have a list of properties$/ do
-  @property = Factory.create(:property)
+  @property = Factory.create(:property_1)
 end
 
 Then /^I should see a list of properties$/ do
@@ -22,7 +22,8 @@ When /^I fill\-out the information about my property$/ do
 end
 
 Then /^I should see my new post$/ do
-  Then 'I should see "3+1 HDB Yishun Area"'
+  Then 'I should see "Property was successfully created."'
+  And 'I should see "3+1 HDB Yishun Area"'
   And 'I should see "New renoveated area in Yishun. 3+1 unit fully furnished with AC"'
   And 'I should see "Yishun, Singapore"'
   And 'I should see "760760"'
@@ -32,7 +33,7 @@ Then /^I should see my new post$/ do
 end
 
 Given /^I have a property$/ do
-  @property = Factory.create(:property)
+  @property = Factory.create(:property_1)
 end
 
 When /^I try to update that property$/ do
@@ -51,7 +52,8 @@ When /^I try to update that property$/ do
 end
 
 Then /^I should see my changes$/ do
-  Then 'I should see "3+1 HDB Yishun Area Edit"'
+  Then 'I should see "Property was successfully updated."'
+  And 'I should see "3+1 HDB Yishun Area Edit"'
   And 'I should see "New renoveated area in Yishun. 3+1 unit fully furnished with AC Edit"'
   And 'I should see "Yishun, Singapore Edit"'
   And 'I should see "111111"'

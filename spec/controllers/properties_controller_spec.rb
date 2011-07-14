@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PropertiesController do
 
   def valid_attributes
-    FactoryGirl.attributes_for(:property)
+    FactoryGirl.attributes_for(:property_1)
   end
 
   describe "GET index" do

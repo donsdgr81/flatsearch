@@ -1,0 +1,35 @@
+%h1 Listing properties
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Address
+    %th Zipcode
+    %th Bedrooms
+    %th Bathrooms
+    %th Price
+    %th Negotiable
+    %th Date available
+    %th Size
+    %th Furnished
+    %th
+    %th
+    %th
+  - @properties.each do |property|
+    %tr
+      %td= property.title
+      %td= property.description
+      %td= property.address
+      %td= property.zipcode
+      %td= property.bedrooms
+      %td= property.bathrooms
+      %td= property.price
+      %td= property.negotiable
+      %td= property.date_available
+      %td= property.size
+      %td= property.furnished
+      %td= link_to 'Show', property
+      %td= link_to 'Edit', edit_property_path(property)
+      %td= link_to 'Destroy', property, confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Property', new_property_path
