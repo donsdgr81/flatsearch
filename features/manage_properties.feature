@@ -10,13 +10,15 @@ Feature: Manage Properties
 
 
   Scenario: Post a new property
-    Given I am on the new properties page
-    When I fill-out the information about my property
+    Given a logged in user
+    When I am on the new properties page
+    And I fill-out the information about my property
     Then I should see my new post
 
   Scenario: Update a property
-    Given I have a property
-    When I try to update that property
+    Given a logged in user
+    When I have a property
+    And I try to update that property
     Then I should see my changes
 
   Scenario: Show a property
@@ -26,7 +28,8 @@ Feature: Manage Properties
     Then I should see the property details
 
   Scenario: Delete a property
-    Given I have a property
-    When I am on the properties page
+    Given a logged in user
+    When I have a property
+    And I am on the properties page
     And I delete that property
     Then I should not see the property in the list

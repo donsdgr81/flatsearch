@@ -6,6 +6,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    - if flash
-      %div= flash[:notice]
+    - if user_signed_in?
+      %p
+        = link_to "Logout", destroy_user_session_path, :method => 'delete'
+    - if flash[:notice]
+      %div.notice= flash[:notice]
+    - if flash[:alert]
+      %div.alert= flash[:alert]
     = yield

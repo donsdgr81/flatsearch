@@ -32,11 +32,11 @@ Then /^I should see my new post$/ do
   And 'I should see "2300"'
 end
 
-Given /^I have a property$/ do
+When /^I have a property$/ do
   @property = Factory.create(:property_1)
 end
 
-When /^I try to update that property$/ do
+And /^I try to update that property$/ do
   visit edit_property_url(@property)
   When %{I fill in the following:}, table(%{
     | Title | 3+1 HDB Yishun Area Edit|
@@ -87,6 +87,14 @@ end
 Then /^I should not see the property in the list$/ do
   Then "I should see \"Property Deleted.\""
 
+end
+
+When /^I try to edit that property$/ do
+  visit edit_property_url(@property)
+end
+
+When /^I try to delete that property$/ do
+  visit "/properties/#{@property.id}"
 end
 
 

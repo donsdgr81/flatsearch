@@ -1,4 +1,7 @@
 class PropertiesController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /properties
   def index
     @properties = Property.all

@@ -1,5 +1,11 @@
 FactoryGirl.define do
 
+  factory :user do
+    email 'donsdgr81@gmail.com'
+    password 'password'
+    password_confirmation 'password'
+  end
+
   factory :property_1, :class => Property do
     title "3+1 HDB Yishun Area"
     description "New renoveated area in Yishun. 3+1 unit fully furnished with AC"

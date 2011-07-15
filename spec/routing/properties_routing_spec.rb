@@ -3,6 +3,10 @@ require "spec_helper"
 describe PropertiesController do
   describe "routing" do
 
+    it "routes to root" do
+      get("/").should route_to("properties#index")
+    end
+
     it "routes to #index" do
       get("/properties").should route_to("properties#index")
     end
