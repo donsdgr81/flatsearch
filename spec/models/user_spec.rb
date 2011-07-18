@@ -9,4 +9,6 @@ describe User do
       should validate_presence_of(:password_confirmation)
     end
   end
+
+  it {should have_many(:properties)}
 end

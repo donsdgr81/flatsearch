@@ -94,7 +94,8 @@ When /^I try to edit that property$/ do
 end
 
 When /^I try to delete that property$/ do
-  visit "/properties/#{@property.id}"
+  When "I am on the properties page"
+  And 'I follow "Destroy"'
 end
 
 

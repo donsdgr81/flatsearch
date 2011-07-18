@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'capybara/rspec'
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
@@ -78,4 +79,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # Add devise test helpers
+  config.include Devise::TestHelpers, :type => :controller
 end

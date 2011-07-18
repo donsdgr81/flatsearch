@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe PropertiesController do
 
+  def user
+    FactoryGirl.create(:user)
+  end
+
   def valid_attributes
     FactoryGirl.attributes_for(:property_1)
   end
@@ -24,6 +28,7 @@ describe PropertiesController do
 
   describe "GET new" do
     it "assigns a new property as @property" do
+      sign_in user
       get :new
       assigns(:property).should be_a_new(Property)
     end
@@ -31,6 +36,7 @@ describe PropertiesController do
 
   describe "GET edit" do
     it "assigns the requested property as @property" do
+      sign_in user
       property = Property.create! valid_attributes
       get :edit, :id => property.id.to_s
       assigns(:property).should eq(property)
@@ -38,6 +44,11 @@ describe PropertiesController do
   end
 
   describe "POST create" do
+
+    before(:each) do
+      sign_in user
+    end
+
     describe "with valid params" do
       it "creates a new Property" do
         expect {
@@ -75,6 +86,11 @@ describe PropertiesController do
   end
 
   describe "PUT update" do
+
+    before(:each) do
+      sign_in user
+    end
+
     describe "with valid params" do
       it "updates the requested property" do
         property = Property.create! valid_attributes
@@ -119,6 +135,11 @@ describe PropertiesController do
   end
 
   describe "DELETE destroy" do
+
+    before(:each) do
+      sign_in user
+    end
+
     it "destroys the requested property" do
       property = Property.create! valid_attributes
       expect {

@@ -1,7 +1,11 @@
 FactoryGirl.define do
 
+  sequence :email do |n|
+    "dons#{n}@gmail.com"
+  end
+
   factory :user do
-    email 'donsdgr81@gmail.com'
+    email
     password 'password'
     password_confirmation 'password'
   end
@@ -18,6 +22,7 @@ FactoryGirl.define do
     date_available Date.new(2011,6,11)
     size 1200
     furnished true
+    user
   end
 
   factory :property_2, :class => Property do
@@ -32,5 +37,6 @@ FactoryGirl.define do
     date_available Date.new(2011,8,1)
     size 140
     furnished false
+    user
   end
 end

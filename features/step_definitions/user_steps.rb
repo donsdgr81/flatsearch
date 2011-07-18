@@ -13,4 +13,5 @@ Given /^a logged in user$/ do
 end
 
 Given /^I am not logged in$/ do
+  visit('/users/sign_out')
 end

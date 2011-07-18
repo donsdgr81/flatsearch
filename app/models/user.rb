@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email, :password, :password_confirmation
 
+  has_many :properties
+
 
 end
